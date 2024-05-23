@@ -1,0 +1,30 @@
+using System;
+
+public class Aufgabe3{
+
+ static void Main(string[] args)
+        {
+            string weitermachen = "J";
+            while (weitermachen.ToUpper() == "J")
+            {
+                Console.WriteLine("Geben Sie das Startkapital ein:");
+                double startkapital = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Geben Sie den Prozentsatz ein:");
+                double prozentsatz = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Geben Sie die Jahre der Verzinsung ein:");
+                int jahre = Convert.ToInt32(Console.ReadLine());
+
+                double endkapital = startkapital * Math.Pow((1 + prozentsatz / 100), jahre);
+                Console.WriteLine("Startkapital: " + startkapital.ToString("N1"));
+                Console.WriteLine("Prozentsatz:  " + prozentsatz.ToString("N1"));
+                Console.WriteLine("Jahre:        " + jahre);
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("Endkapital:   " + endkapital.ToString("N11"));
+
+                Console.WriteLine("Wollen Sie nochmal(J/N):");
+                weitermachen = Console.ReadLine();
+            }
+        }
+    }
